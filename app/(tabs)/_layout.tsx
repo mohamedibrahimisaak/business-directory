@@ -10,7 +10,7 @@ export default function TabLayout() {
     <Tabs screenOptions={{headerShown: false,
       tabBarActiveTintColor: Colors.PRIMARY
     }}>
-      <Tabs.Screen name="home" 
+      <Tabs.Screen name="index" 
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({color})=> <Ionicons name="home" size={24} color={color} />
