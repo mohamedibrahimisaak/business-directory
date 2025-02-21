@@ -3,6 +3,7 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import LoginScreen from "../components/LoginScreen";
 import { tokenCache } from '@/cache';
+import { StatusBar } from "expo-status-bar";
 
 export default function RootLayout() {
   useFonts({
@@ -13,6 +14,7 @@ export default function RootLayout() {
   return(
   <ClerkProvider tokenCache={tokenCache} publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY}>
     <SignedIn>
+    <StatusBar barStyle="light-content" translucent/>
       <Stack>
         <Stack.Screen name="(tabs)" options={{
           headerShown: false,
