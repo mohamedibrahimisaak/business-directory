@@ -2,9 +2,9 @@ import React, { useCallback, useEffect } from 'react' //1
 import { View, Text, Image, TouchableOpacity,StyleSheet } from 'react-native'
 import { Colors } from './../constants/Colors';
 
-import * as WebBrowser from 'expo-web-browser'  //2
-import * as AuthSession from 'expo-auth-session' //3
-import { useSSO } from '@clerk/clerk-expo'  //4
+import * as WebBrowser from 'expo-web-browser'  
+import * as AuthSession from 'expo-auth-session' 
+import { useSSO } from '@clerk/clerk-expo'  
 
 export const useWarmUpBrowser = () => {
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function LoginScreen() {
       </View>
       <View style={{backgroundColor: '#fff',padding:20,marginTop:-20}}>
         <Text style={{fontSize:30,fontFamily:'outfit-bold',textAlign:'center'}}>Your Ultimate 
-          <Text style={{color: Colors.PRIMARY}}>Community Business Directory</Text> App.</Text>
+          <Text style={{color: Colors.PRIMARY}}> Community Business Directory</Text> App.</Text>
         <Text style={{
           fontSize:15,
           fontFamily:'outfit',
@@ -93,3 +93,14 @@ const styles = StyleSheet.create({
   }
 
 })
+
+
+//1. The "Missing CAPTCHA token" error occurs because Clerk's bot protection feature is not supported 
+// in mobile environments. To resolve this, you'll need to disable bot protection in your Clerk Dashboard. 
+// Go to User & Authentication > Attack Protection and turn off the Bot sign-up protection. 
+// This should resolve the CAPTCHA token error and allow authentication to work properly 
+// in your Expo application.
+
+//Just follow the OAuth steps and you should be able to use Clerk's Google SSO with your Expo application.
+//Just put everything in this file. This is a simple login screen with Google SSO.
+//Make sure to use the onPress method at the button to start the SSO flow.
