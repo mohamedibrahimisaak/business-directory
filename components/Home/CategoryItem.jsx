@@ -7,7 +7,7 @@ export default function CategoryItem({ item, onCategoryPress }) {
     <TouchableOpacity onPress={() => onCategoryPress(item)}>
       <View
         style={{
-          padding: 10,
+          padding: 20,
           marginRight: 15,
           borderRadius: 99,
           backgroundColor: Colors.BG,
